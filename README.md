@@ -10,6 +10,7 @@ src/
 └── pages/
     └── positions/
     └── grilles/
+    └── polices/
 selecteur
 textes
 fond_bordure
@@ -36,7 +37,7 @@ Exercice 7 = unites
 Exercice 8 = flexbox
 Exercice 9 = positions
 Exercice 10 = grilles
-Exercice 11 = 
+Exercice 11 = polices
 
 
 Chaque lien doit permettre d'accéder à la page correspondante dans le dossier `pages`.

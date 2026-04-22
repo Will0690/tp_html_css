@@ -1,0 +1,14 @@
+@import url("./assets/css/selecteur.css");
+@import url("./assets/css/textes.css");
+@import url("./assets/css/fond_bordure.css");
+@import url("./assets/css/couleurs.css");
+@import url("./assets/css/boites.css");
+@import url("./assets/css/unites.css");
+@import url("./assets/css/flexbox.css");
+
+
+ *{ padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+}

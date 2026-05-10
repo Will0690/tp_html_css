@@ -1,0 +1,140 @@
+/*Exercice 1*/
+
+.ma-boite {
+    width: 300px;
+    height: 150px;
+    background-color: blue;
+}
+
+/*Exercice 2*/
+
+.boite-image.img {
+    width: 400px;
+    height: 200px;
+    
+    background-image: url("../imgs/.boite-image");
+    
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    
+    background-size: cover; 
+}
+
+/*Exercice 3*/
+
+.boite-image.boite-responsive {
+
+    width: 25%;
+    max-width: 200px;
+    height: 100px;
+    
+    background-image: url("../imgs/oclock-engagements-developpeur-web.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size: cover; 
+}
+
+/*Exercice 4*/
+
+.boite-degrade {
+    width: 400px;
+    height: 200px;
+    
+    background: linear-gradient(to right, red, yellow);
+}
+
+/*Exercice 5*/
+
+.degrade-avance {
+    width: 400px;
+    height: 200px;
+    
+    background: linear-gradient(45deg, #ff0000, #ff00ff, #0000ff);
+}
+
+/*Exercice 6*/
+
+.boite-bordure {
+    width: 400px;
+    height: 200px;
+    
+    border: 2px solid black;
+    padding: 20px;
+    gap: 20px;
+}
+
+/*Exercice 7*/
+
+.boite-multicouleur {
+    width: 400px;
+    height: 200px;
+    
+    border-width: 5px;
+    border-style: solid;
+    
+    border-top-color: red;
+    border-right-color: green;
+    border-bottom-color: blue;
+    border-left-color: yellow;
+    padding: 20px;
+    gap: 20px;
+}
+
+/*Exercice 8*/
+
+.carte-arrondie {
+    width: 400px;
+    height: 200px;
+    background-color: #f9f9f9; 
+    
+    border: 2px solid #333;
+    
+    border-radius: 20px;
+    padding: 20px;
+    gap: 20px;
+}
+
+/*Exercice 9*/
+
+.cercle {
+    /* La largeur et la hauteur doivent être égales */
+    width: 150px;
+    height: 150px;
+    
+    background-color: coral;
+    
+    /* 50% de rayon transforme le carré en cercle parfait */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/*Exercice 10*/
+
+.card {
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px; 
+    overflow: hidden;     
+    font-family: sans-serif;
+}
+
+.card-image {
+    height: 150px;
+    background-image: url("../imgs/oclock-engagements-developpeur-web.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-body {
+    padding: 15px;
+    color: #333;
+}
+
+.card-body h3 {
+    margin: 0 0 10px 0;
+}
+

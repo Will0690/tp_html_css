@@ -1,0 +1,134 @@
+/* Exercice 1 - Les bases du texte */
+
+.mon-paragraphe {
+  color: black;
+  font-size: 18px;
+  font-family: sans-serif; 
+}
+
+/* Exercice 2 - Gras, italique, transformation */
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;        
+}
+
+.p {
+  font-style: italic;
+}
+
+/* Exercice 3 - Alignement du texte */
+
+.section {
+    text-align: center;
+}
+
+/* Exercice 4 - Espacement entre les lignes */
+
+p {
+  line-height: 1.5; 
+}
+
+/* Exercice 5 - Espacement entre les lettres et les mots */
+
+h1 {
+  letter-spacing: 3px; 
+  text-transform: uppercase;
+}
+
+p {
+  word-spacing: 10px; 
+}
+
+/* Exercice 6 - Soulignement et décoration */
+
+
+.first a {
+  text-decoration: none;
+  color: #3498db;
+  transition: 5s;
+}
+
+.second:hover {
+  text-decoration: underline;
+  color: #2980b9; 
+  cursor: pointer;
+}
+
+/* Exercice 7 - Ombre sur le texte */
+
+p {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  
+  text-shadow: 1px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Exercice 8 - POlice personnalisée (Google Fronts)*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-weight: 100px;
+}
+
+/* Exercice 9 - Hiérarchie typographique*/
+
+h1 {
+  font-size: 48px;
+  font-weight: 900
+  margin-bottom 20px;
+  color: #2c3e50;
+}
+
+h2 {
+  font-size: 28px;
+  color: #3498db;  
+  border-bottom: 2px solid #3498db; 
+  padding-bottom: 10px;
+}
+
+/*Exercice 10*/
+
+.card {
+  width: 290px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.card-subtitle {
+  font-style: italic;
+  font-weight: normal;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  line-height: 1.6; 
+  text-align: justify;  
+  word-spacing: 1px;
+  color: #34495e;
+  margin-bottom: 25px;
+}
+
+
+
+
+

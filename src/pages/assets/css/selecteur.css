@@ -58,8 +58,56 @@ h2~p{
 /* Exercice 7 - Selecteurs d'attributs */
 
 input[type="text"]{
-    color: aqua;
-    font-size: medium;
+    border: 2px solid blue;
+    padding: 2px;
 }
 
+input[placeholder] {
+  background-color: #f0f0f0;
+  font-style: italic;
+}
 
+/* Exercice 8 - Pseudo-classes*/
+
+ul li:hover {
+    color:orange
+    cursor pointer
+}
+
+ul li:first-child {
+  font-weight: bold;
+  color: blue;
+}
+
+ul li:last-child {
+  text-decoration: underline;
+  color: red;
+}
+
+/* Exercice 9 - nth-child (niveau intermédiaire)*/
+
+ul li:nth-child(odd) {
+  color: black;
+}
+
+ul li:nth-child(even) {
+  color: gray;
+}
+
+/* Exercice 10 - Sélecteurs combinés (niveau avancé)*/
+
+.card .description {
+  color: blue;
+}
+
+p:not(.description) {
+  font-style: italic;
+}
+
+.card p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+.card h3 {
+  text-transform: uppercase;
+}

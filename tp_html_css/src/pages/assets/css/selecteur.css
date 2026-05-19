@@ -1,0 +1,65 @@
+/* Exercice 1 - Sélecteurs de base */
+
+#Selecteurs{
+    width: 100%;
+    margin: 20px;
+}
+
+#title{
+    display: flex;
+    align-items: center;
+    color: red;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    color: blue;
+}
+
+/* Exercice 2 - Selecteur universel */
+
+#Selecteurs{
+    box-sizing: border-box;
+}
+
+/* Exercice 3 - Selecteur descendant */
+
+.container{
+    color: green;
+}
+
+/* Exercice 4 - Selecteur enfant direct */
+
+.container>p{
+    color: red;
+}
+
+/* Exercice 5 - Selecteurs adjacents */
+
+h2+p{
+    display: flex;
+    color: orange;
+    justify-self: baseline;
+    gap: inherit;
+    font-size: medium;
+}
+
+/* Exercice 6 - Selecteurs generaux */
+
+h2~p{
+    display: grid;
+    color: brown;
+    align-items: center;
+    gap: initial;
+    font-size: medium;
+}
+
+/* Exercice 7 - Selecteurs d'attributs */
+
+input[type="text"]{
+    color: aqua;
+    font-size: medium;
+}
+
+

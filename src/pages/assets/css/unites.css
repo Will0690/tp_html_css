@@ -1,0 +1,407 @@
+/*Exercice 1*/
+
+/* Conteneur parent */
+.parent {
+    width: 500px;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Bloc avec valeur fixe */
+.enfant-px {
+    width: 250px;
+    background-color: #ff4757;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Bloc avec valeur relative */
+.enfant-pourcent {
+    width: 50%;
+    background-color: #2ed573;
+    padding: 10px;
+}
+
+/*Observation:
+
+Visuel actuel : Les deux blocs enfants ont exactement la même taille à l'écran.
+
+Explication : Le deuxième bloc fait 50% de son parent. Comme le parent fait 500px, le calcul donne 500px*0,50 = 250px.
+
+Le test à faire : Modifie la largeur de .parent à 800px dans le CSS. Le bloc rouge (px) restera identique. Le bloc vert (%) s'agrandira automatiquement à 400px.
+
+/*Exercice 2*/
+
+/* Définition de la taille de base */
+body {
+    font-size: 16px;
+}
+
+/* Le paragraphe prend 2 fois la taille de son parent (body) */
+p {
+    font-size: 2em; 
+    color: #333;
+    margin: 20px;
+}
+
+/* Le span prend 1.5 fois la taille de son parent direct (p) */
+p span {
+    font-size: 1.5em;
+    color: #ff4757;
+    display: block; /* Force le passage à la ligne pour mieux voir */
+    margin-top: 10px;
+}
+
+/*Taille finale du paragraphe (p) : 32px
+
+Calcul : 16px*2px = 32px. L'unité em se base sur la taille de police de l'élément parent direct
+
+/*Exercice 3*/
+
+/* Définition de la taille de base sur la racine (html ou body) */
+body {
+    font-size: 16px;
+}
+
+/* Le paragraphe se base sur la racine (body) */
+p {
+    font-size: 2rem; 
+    color: #333;
+    margin: 20px;
+}
+
+/* Le span se base AUSSI sur la racine, pas sur le paragraphe */
+p span {
+    font-size: 1.5rem;
+    color: #2ed573; /* Vert pour marquer le changement */
+    display: block; 
+    margin-top: 10px;
+}
+
+/*Explications:
+
+Le mot rem signifie Root EM (EM de la racine).
+
+Contrairement au em, le rem ignore la taille de son parent direct (p). Il se réfère uniquement à la taille de la police de la racine du document (html ou body).
+
+Résultat : Il n'y a aucun effet cumulatif. 
+
+Le span devient plus petit que le paragraphe, car sa valeur est calculée directement depuis les 16px d'origine.
+
+/*Exercie 4*/
+
+/* Configuration globale indispensable */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* Force le calcul incluant padding et border */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+
+/* Le conteneur de la grille */
+.grille {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 15px;
+    
+    /* Correction moderne du débordement avec Flexbox et gap */
+    display: flex;
+    gap: 15px; /* Espace entre les colonnes sans casser la ligne */
+}
+
+/* Les 3 colonnes responsives */
+.colonne {
+    /* flex-grow: 0, flex-shrink: 1, flex-basis: 33.33% */
+    flex: 0 1 33.33%; 
+    
+    background-color: #3742fa;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Analyse et correction du débordement:
+
+- Le problème initial (sans Flexbox) : Si vous utilisez width: 33.33% avec des marges classiques (margin-right: 15px), le calcul total dépasse 100% (33.33% x 3 + marges > 100%). La troisième colonne passe alors à la ligne inférieure.
+
+Autre solution:
+
+- L'utilisation de display: flex combiné avec gap permet d'insérer de l'espace uniquement entre les éléments.
+
+- La propriété flex: 0 1 33.33% autorise le navigateur à réduire très légèrement les colonnes pour y insérer le gap, empêchant tout débordement ou retour à la ligne forcé.
+
+/*Exercice 5*/
+
+/* Reset indispensable pour supprimer les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Section Fullscreen */
+section {
+    width: 100%;
+    height: 100vh; /* Occupe 100% de la hauteur du viewport (fenêtre) */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    /* Méthode Flexbox pour le centrage absolu */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+}
+
+/* Style du texte */
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/*Ce qu'il faut observer:
+
+L'unité vh (Viewport Height) : 100vh correspond exactement à 100% de la hauteur de la fenêtre de ton navigateur, peu importe la taille de l'écran (smartphone, tablette ou ordinateur).
+
+Le piège évité : Sans le reset margin: 0 sur le body, le navigateur ajoute une marge par défaut qui crée une barre de défilement (scroll) inutile.
+
+Le centrage : L'association de display: flex, justify-content: center et align-items: center est la technique la plus efficace en CSS pour centrer un élément sur les deux axes simultanément.
+
+/*Exercice 6*/
+
+/* Déclaration globale pour masquer le scroll horizontal indésirable */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* CORRECTION DU DÉBORDEMENT : Bloque le défilement horizontal */
+    overflow-x: hidden; 
+}
+
+/* La bannière */
+.banner {
+    width: 100vw; /* Prend la largeur totale de la fenêtre */
+    background-color: #ff9f43;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Bloc créé uniquement pour générer un scroll vertical */
+.contenu-long {
+    height: 150vh; 
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/*Analyse et explications du bug
+
+Pourquoi le scroll horizontal apparaît-il sans la correction ?
+
+L'unité 100vw calcule la largeur totale de la fenêtre, incluant la barre de défilement verticale. Lorsque la page devient longue, le navigateur affiche l'ascenseur vertical à droite. La bannière fait 100vw + l'épaisseur de cet ascenseur, ce qui dépasse l'écran et déclenche une vilaine barre de scroll horizontal en bas.
+
+La correction par overflow-x: hidden : Cette propriété appliquée sur le html ou body indique au navigateur de couper tout ce qui dépasse sur l'axe horizontal, éliminant instantanément la barre de défilement du bas.
+
+Alternative:
+
+Pour éviter d'utiliser overflow-x: hidden, la meilleure pratique actuelle consiste souvent à remplacer width: 100vw par width: 100%. Contrairement au vw, le pourcentage calcule l'espace disponible sans inclure la barre de défilement.
+
+/*Exercice 7*/
+
+/* 1. Configuration de la base pour le calcul des rem */
+html {
+    font-size: 16px;
+}
+
+/* 2. Reset pour éviter les erreurs de calcul de tailles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. Application des consignes sur la carte */
+.carte-produit {
+    /* Largeur en % pour la fluidité */
+    width: 90%;
+    max-width: 400px; /* Limite la taille maximale sur grand écran */
+    
+    /* Padding en rem pour des espacements proportionnels au texte */
+    padding: 2.2rem;
+    
+    /* Border-radius en px pour un arrondi net et fixe */
+    border-radius: 14px;
+    
+    /* Habillage visuel de la carte */
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-family: sans-serif;
+}
+
+/* 4. Styles des éléments internes */
+.carte-produit h2 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.carte-produit p {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+}
+
+.bouton-action {
+    /* Le bouton réutilise la même logique d'unités */
+    width: 100%;             /* Largeur en % */
+    padding: 0.75rem 1.5rem; /* Espacement en rem */
+    border-radius: 6px;      /* Arrondi en px */
+    
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Exercice 8*/
+
+/* typographie responsive */
+.banner h1 {
+    font-size: 5vw; /* Fait varier la taille à exactement 5% de la largeur du viewport */
+    text-align: center;
+    color: #ffffff; /* Optionnel : pour le contraste visuel sur fond de bannière */
+}
+
+/* Optionnel : Si tu veux appliquer la règle à TOUS les h1 de ta page actuelle */
+h1 {
+    font-size: 5vw;
+}
+
+/*EXercice 9*/
+
+/* Style du paragraphe avec taille fluide et limites strictes */
+p.texte {
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.5;
+    color: #333333;
+}
+
+/* Style de la balise span à l'intérieur du paragraphe */
+p.texte .texte-important {
+    color: #e74c3c;
+    font-weight: bold;
+    background-color: #fef9e7;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/*Comprendre le comportement dynamique de clamp()
+
+La fonction clamp(minimum, valeur_ideale, maximum) agit comme une barrière de sécurité pour votre texte :
+
+Taille minimale (16px) : Sur un écran de smartphone, le texte ne descendra jamais sous les 16px. Vos utilisateurs n'auront pas besoin de zoomer pour lire.
+
+Valeur idéale (2vw) : Sur une tablette ou un ordinateur portable, la taille du texte s'adapte en temps réel. Elle représente exactement 2% de la largeur de la fenêtre du navigateur (Viewport Width).
+
+Taille maximale (24px) : Sur un écran géant de bureau, le texte s'arrêtera de grandir à 24px. Cela évite un affichage disproportionné.*/
+
+/*Exercice 10*/
+
+
+/* Styles de base pour la carte */
+.product-card {
+    width: 300px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol sur la carte */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Style de l'image */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Conteneur du texte et du bouton */
+.product-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Titre du produit */
+.product-title {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Description du produit */
+.product-description {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* Mise en valeur du texte important */
+.highlight {
+    color: #0071e3;
+    font-weight: 600;
+}
+
+/* Bouton d'achat */
+.product-button {
+    margin-top: 8px;
+    padding: 12px;
+    background-color: #0071e3;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Effet de survol sur le bouton */
+.product-button:hover {
+    background-color: #005bb5;
+}
+
+

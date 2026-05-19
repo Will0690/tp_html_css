@@ -1,0 +1,248 @@
+/*Exercice 1*/
+
+.boite {
+
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+
+  /* Ajouts de l'exercice */
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+
+  color: white;
+}
+
+/*Réponse à la question (taille occupée par l'élément)
+
+1) largeur totale
+
+- largeur du contenu: 200px
+- padding (gauche/droite): 40px
+- bordure (gauche/droite): 10px
+
+2) hauteur totale
+
+- hauteur du cintenu: 100px
+- padding (gauche/droite): 40px
+- bordure (gauche/droite): 10px
+
+/*Exercice 2*/
+
+.boite2 {
+
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+
+  /* Ajouts de l'exercice */
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+
+  color: white;
+}
+
+.boite2 {
+  box-sizing: border-box; /* On force le calcul inclusif */
+}
+
+/*Observations:
+
+- Le box-sizing change la définition même des propriétés width et height pour le navigateur.
+
+- Avec border-box : width = la zone de contenu + le padding + la bordure. Le navigateur fait la soustraction automatiquement pour que l'objet final respecte la taille que tu as demandée.
+
+/*EXercice 3*/
+
+.btn {
+  background-color: blue;
+  color: white;
+  display: inline-block; /* Pour que la div s'adapte à la taille du texte */
+  text-align: center;
+  
+  /* Appliquons le padding asymétrique */
+  padding: 10px 30px 5px 50px;
+  
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+/*La logique à retenir : "L'horloge"
+
+Pour le padding (et le margin), le navigateur lit les valeurs dans le sens des aiguilles d'une montre en commençant par le haut :
+- 10px : Haut (Top)
+- 30px : Droite (Right)
+- 5px : Bas (Bottom)
+- 50px : Gauche (Left)
+Résultat visuel : Le texte est très décalé vers la droite (car il y a 50px de vide à gauche) et est plus proche du bord bas (seulement 5px) que du bord haut.*/
+
+/*exercice 4*/
+
+div {
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  line-height: 50px; /* Pour centrer le texte verticalement */
+}
+
+.box-1 {
+  background-color: #e74c3c; /* Rouge */
+  margin: 50px; /* Applique 50px partout */
+}
+
+.box-2 {
+  background-color: #2ecc71; /* Vert */
+  margin: 50px; /* Applique 50px partout */
+}
+
+/*Réponse:
+
+L'espace entre les deux n'est pas de 100px parce que, lorsque deux marges verticales se touchent, elles ne s'additionnent pas : elles fusionnent. Le navigateur ne garde que la plus grande des deux.*/
+
+/*Exercice 5*/
+
+.center {
+  width: 300px; /* Indispensable */
+  margin: 0 auto; /* 0 en haut/bas, auto à gauche/droite */
+  background-color: rgb(8, 9, 9);
+  display: block; /* Par défaut pour une div, mais requis pour un lien */
+}
+
+/*Les 3 conditions de réussite :
+
+- Une largeur fixée (width) : L'élément doit être plus étroit que son parent. Si tu ne définis pas de largeur, une div prend par défaut 100% de la place : il n'y a donc plus de marge disponible à distribuer à gauche et à droite.
+
+- Un affichage de type bloc : Cela fonctionne sur les éléments block (div, p, header, etc.). Cela ne fonctionne pas sur les éléments inline (span, a, img) car ils ne prennent que la largeur de leur contenu et ignorent les marges auto.
+
+- Pas de flottement ou de position absolue : Si l'élément a un float: left ou un position: absolute, le margin: auto est ignoré car l'élément est "sorti" du flux normal de la page.
+
+/*Exercice 6*/
+
+.card {
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 10px; /* Arrondit les coins */
+  padding: 20px; 
+  color: black;      /* Crée de l'espace interne */
+  
+  /* Pour l'exercice, rappelons le box-sizing */
+  box-sizing: border-box; 
+  text-box: inherit;
+  height: auto;
+  background-color: rgb(13, 222, 254);
+  margin-bottom: 40px;
+}
+
+/*L'impact visuel sur les composants UI (Interface Utilisateur)
+
+1) Le Padding (La respiration) : C'est l'élément le plus crucial en design. Sans padding, le texte toucherait la bordure noire. Le padding donne de "l'air" au contenu, ce qui améliore immédiatement la lisibilité et donne un aspect plus professionnel (moins "tassé").
+
+2) Le Border-radius (L'esthétique) : Les angles droits sont perçus comme plus rigides et agressifs. Un border-radius de 10px adoucit le composant, le rendant plus moderne et accueillant. C'est un standard dans le design d'applications actuelles.
+
+3) La structure (Box Model) : Avec le padding: 20px et border: 2px, si tu n'utilises pas border-box, ta carte "gonfle" et devient plus large que les 300px prévus. En UI, cela peut casser tes alignements avec le reste de la page.
+
+/*Exercice 7*/
+
+.lorem {
+  width: 250px;
+  height: 100px; /* La limite qui provoque le débordement */
+  background-color: #f1f1f1;
+  border: 1px solid #333;
+  padding: 10px;
+  
+  /* À tester un par un : */
+  overflow: hidden; 
+  color: #e74c3c;
+  height: auto;
+  margin-top: 40px;
+}
+
+/*Analyse des comportements :
+
+1) overflow: hidden;
+
+- Comportement : Tout ce qui dépasse de la boîte (après 100px) est purement et simplement coupé.
+
+- Rendu : Le texte s'arrête net, il devient impossible de lire la suite. C'est radical.
+
+2) overflow: scroll;
+
+- Comportement : Le navigateur force l'affichage de barres de défilement (verticale et horizontale).
+
+- Rendu : Même si le texte ne dépasse pas, les barres seront présentes (souvent grisées). On peut faire défiler pour lire tout le texte.
+
+3) overflow: auto;
+
+- Comportement : Le navigateur est "intelligent". Il n'ajoute la barre de défilement que si le texte dépasse.
+
+- Rendu : C'est la valeur la plus utilisée. Si le texte rentre dans les 100px, la boîte reste propre. S'il y en a trop, une barre apparaît sur le côté.
+
+/*Exercice 8*/
+
+span, div {
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid;
+  background-color: lightblue;
+  display: inline-block;
+}
+
+div {
+  background-color: lightcoral; /* Couleur différente pour bien distinguer */
+}
+
+/*Ce que tu vas observer dans ton navigateur :
+
+1) La DIV (en rouge) : Elle se comporte comme une boîte parfaite. Elle fait 200px de large, elle a un grand espace autour d'elle (margin) et elle force le texte suivant à aller à la ligne.
+
+2) Le SPAN (en bleu) :
+
+- Il ignore tes 200px de largeur et colle au texte.
+
+- Il ne crée pas d'espace vertical : le texte "Texte avant" et "Texte entre" sera presque collé ou même chevauché par la bordure bleue.
+
+- Il reste "dans le flux" de la ligne.
+
+/*Exercice 9*/
+
+/*Le problème: pourquoi la ligne casse
+
+Les navigateurs utilisent la propriété box-sizing: content-box par défaut.
+
+- Calcul initial : La largeur (width) s'applique uniquement au contenu.
+
+- Ajouts successifs : Le padding et les bordures s'ajoutent autour de cette largeur.
+
+- Calcul réel par colonne : 33.33% + 40px (padding gauche/droite) + 4px (bordures gauche/droite).
+
+- Résultat : Le total des 3 colonnes dépasse 100% de l'espace disponible.*/
+
+/* Bonnes pratiques : appliquer à tous les éléments */
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex; /* Aligne les colonnes côte à côte */
+  width: 100%;
+}
+
+.column {
+  width: 33.33%;
+  padding: 20px;
+  border: 2px solid #000;
+}
+/*INCOMPREHENSIBLE: A REFAIRE*/
+
+/*Exercice 10*/
+
+
+
+
+
+
+

@@ -102,3 +102,86 @@ texte en rem
 bouton avec em
 
 👉 Objectif : structurer une UI propre et scalable. -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="./assets/css/unites.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unités</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Conteneur parent de taille fixe -->
+    <div class="parent">
+        
+        <!-- Premier bloc avec une largeur fixe en pixels -->
+        <div class="enfant-px">Premier bloc en pixels (250px)</div>
+        
+        <!-- Deuxième bloc avec une largeur relative en pourcentage -->
+        <div class="enfant-pourcent">Deuxième bloc en pourcentage (50%)</div>
+        
+    </div>
+
+        <!-- Paragraphe principal -->
+         
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora recusandae earum aperiam perferendis illo, explicabo, at dicta est alias expedita quam odio cupiditate veritatis? Maxime aliquam aliquid sit reprehenderit magnam?
+
+        <!-- Élément span imbriqué pour observer l'effet cumulatif -->
+
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti recusandae laudantium fuga suscipit soluta commodi fugiat rerum minima quidem eum expedita sunt harum nostrum, amet corrupti corporis neque et reiciendis.</span>
+    </p>
+
+    
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus recusandae, alias fugit autem repellat voluptatem cumque corrupti sunt, adipisci rerum consequatur labore soluta sequi sit! Illo odio exercitationem error enim. (2rem). 
+
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores expedita sequi, quia ex saepe nisi illo perspiciatis eveniet sed dicta nulla, distinctio, id alias beatae corrupti. Impedit repellendus quod nostrum!(1.5rem) !</span>
+    </p>
+
+        <!-- Conteneur principal de la grille -->
+
+    <div class="grille">
+        <div class="colonne">Première colonne 1</div>
+        <div class="colonne">Deuxième colonne 2</div>
+        <div class="colonne">Troisème colonne 3</div>
+    </div>
+
+        <!-- Section occupant tout l'écran -->
+
+    <section class="hero">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore explicabo esse ipsa nam vero est illo magni delectus voluptatem eaque. Facere facilis, earum inventore voluptatum officiis laborum eligendi dolorem! Deleniti?</h1>
+    </section>
+
+        <!-- Bannière prenant toute la largeur -->
+    <div class="banner">
+        <h1>Bannière Full-Width (100vw)</h1>
+    </div>
+
+    <!-- Contenu long fictif pour forcer l'apparition du scroll vertical -->
+    <div class="contenu-long">
+        <p>Fais défiler la page vers le bas pour observer le problème...</p>
+    </div>
+
+        <!-- Conteneur de la carte -->
+    <div class="carte-produit">
+        <h2>Développement Web</h2>
+        <p>Maîtrisez le choix des unités CSS pour créer des interfaces fluides, esthétiques et parfaitement accessibles.</p>
+        <button class="bouton-action">En savoir plus</button>
+        <p class="texte">Le développement web moderne nécessite la maîtrise absolue du 
+            <span class="texte-important">langage CSS</span> pour concevoir des interfaces élégantes.</p>
+    </div>
+
+    <div class="product-card">
+        <img src="./assets/imgs/Chaise ergonomique.jpg" alt="Chaise de bureau ergonomique" class="product-image" width="300" height="200">
+        <div class="product-content">
+            <h2 class="product-title">Chaise Ergonomique</h2>
+            <p class="product-description">
+            Améliorez votre posture avec notre <span class="highlight">technologie synchrone</span> avancée pour un confort durable.</p>
+            <button class="product-button">Acheter      </button>
+         </div>
+    </div>
+
+</body>
+</html>

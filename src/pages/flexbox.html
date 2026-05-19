@@ -121,3 +121,202 @@ footer
 Desktop : 3 colonnes
 Mobile : 1 colonne
 Utiliser uniquement Flexbox (pas de Grid) -->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="./assets/css/flexbox.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+</head>
+<body>
+
+<!-------------Début première section------------------->
+        <section>
+            <div class="container">
+                 <div class="box">Le module des boîtes flexibles (aussi appelé « flexbox » en anglais), a été conçu comme un modèle de disposition unidimensionnel et comme une méthode permettant de distribuer l'espace entre des objets d'une interface ainsi que de les aligner. Dans cet article, nous verrons les fonctionnalités principales des flexbox que nous approfondirons ensuite dans d'autres articles.</div>
+             </div>
+        </section>
+<!----------------Fin première section------------------>
+
+<!-------------Début de la nav-------------------------->
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="nav-link">Accueil</a>
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Produits</a>
+                <a href="#" class="nav-link">À propos</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+        </nav>
+<!------------------Fin de la nav----------------------->
+
+<!---------------Début deuxième section----------------->
+        <section>
+            <div class="container">
+                <div class="card">
+                    <h2 class="card-title">Titre de la Carte</h2>
+                    <p class="card-text">Voici un texte de description court pour illustrer la disposition en colonne de notre composant graphique.</p>
+                    <button class="card-btn">Découvrir  </button>
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class="flex-item">Bloc 1</div>
+                <div class="flex-item">Bloc 2</div>
+                <div class="flex-item">Bloc 3</div>
+                <div class="flex-item">Bloc 4</div>
+                <div class="flex-item">Bloc 5</div>
+                <div class="flex-item">Bloc 6</div>
+                <div class="flex-item">Bloc 7</div>
+                <div class="flex-item">Bloc 8</div>
+                <div class="flex-item">Bloc 9</div>
+                <div class="flex-item">Bloc 10</div>
+            </div>
+
+        </section>
+<!...............Fin deuxième section...................>
+
+<!..............Début troisième section.................>
+        <section>
+                <!-- Test 1 : space-between -->
+
+            <h2>1. Premier espacement des blocs</h2>
+             <div class="flex-container between">
+                <div class="flex-item">Bloc 1</div>
+                <div class="flex-item">Bloc 2</div>
+                <div class="flex-item">Bloc 3</div>
+                <div class="flex-item">Bloc 4</div>
+            </div>
+
+                <!-- Test 2 : space-around -->
+
+            <h2>2. Deuxième espacement des blocs</h2>
+            <div class="flex-container around">
+                <div class="flex-item">Bloc 1</div>
+                <div class="flex-item">Bloc 2</div>
+                <div class="flex-item">Bloc 3</div>
+                <div class="flex-item">Bloc 4</div>
+            </div>
+
+                <!-- Test 3 : space-evenly -->
+
+            <h2>3. Troisième espacement des blocs</h2>
+            <div class="flex-container evenly">
+                <div class="flex-item">Bloc 1</div>
+                <div class="flex-item">Bloc 2</div>
+                <div class="flex-item">Bloc 3</div>
+                <div class="flex-item">Bloc 4</div>
+            </div>
+        </section>
+<!..............Fin troisième section...................>
+
+<!-------------Début quatrièeme section----------------->
+        <section>
+                <!-- Test 1 : Align-items -->
+
+            <h2>1. Impact de ALIGN-ITEMS (center)</h2>
+            <p>Gère l'alignement individuel des blocs à l'intérieur de CHAQUE ligne.</p>
+            <div class="flex-container test-items">
+                <div class="flex-item">Bloc 1</div>
+                <div class="flex-item">Bloc 2</div>
+                <div class="flex-item">Bloc 3</div>
+                <div class="flex-item">Bloc 4</div>
+                <div class="flex-item">Bloc 5</div>
+                <div class="flex-item">Bloc 6</div>
+            </div>
+
+                    <!-- Test 2 : Align-content -->
+                     
+            <h2>2. Impact de ALIGN-CONTENT (center)</h2>
+            <p>Gère l'alignement du BLOC DE LIGNES entier dans le conteneur.</p>
+            <div class="flex-container test-content">
+                <div class="flex-item">Bloc 1</div>
+                <div class="flex-item">Bloc 2</div>
+                <div class="flex-item">Bloc 3</div>
+                <div class="flex-item">Bloc 4</div>
+                <div class="flex-item">Bloc 5</div>
+                <div class="flex-item">Bloc 6</div>
+            </div>
+        </section>
+<!---------------------Fin quatrième section---------------------------->
+
+<!----------------------Début cinquième section------------------------->
+
+        <section>
+            <div class="dashboard-container">
+
+        <!-- Barre latérale -->
+
+                <aside class="sidebar">
+                    <div class="logo">Mon Dashboard</div>
+                    <nav class="nav-links">
+                        <a href="#" class="active">Accueil</a>
+                        <a href="#">Statistiques</a>
+                        <a href="#">Paramètres</a>
+                    </nav>
+                 </aside>
+
+        <!-- Zone de contenu principal -->
+
+                <main class="main-content">
+                    <h1>Contenu Principal</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, iusto itaque repellendus explicabo <br/>asperiores reiciendis minus exercitationem ipsa similique <br/>tempora magnam consectetur quod laudantium ab, porro sit, id veritatis deserunt.</p>
+                </main>
+             </div>
+
+            <div class="flex-container">
+                <div class="flex-item bloc-1">Bloc 1</div>
+                <div class="flex-item bloc-2">Bloc 2</div>
+                <div class="flex-item bloc-3">Bloc 3</div>
+                <div class="flex-item bloc-4">Bloc 4</div>
+                <div class="flex-item bloc-5">Bloc 5</div>
+            </div>
+
+            <div class="flex-contain">
+                 <div class="flex-item side-bloc">Bloc Gauche</div>
+                 <div class="flex-item center-bloc">Bloc Milieu (2x plus grand)</div>
+                 <div class="flex-item side-bloc">Bloc Droite</div>
+            </div>
+        </section>
+<!---------------------Fin quatrième section------------------------>
+</body>
+</html>
+<!---------------------------FIN------------------------------------->
+
+
+
+/*Création de la page spécifique à l'exercice 10*/
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 10 - Layout Complet Responsive</title>
+    <link rel="stylesheet" href="./flexbox.html">
+</head>
+<body>
+
+    <!-- 1. En-tête de la page -->
+    <header class="main-header">
+        <h1>Mon Site Flexbox</h1>
+    </header>
+
+    <!-- 2. Zone centrale contenant les 3 colonnes -->
+    <div class="content-wrapper">
+        <aside class="column col-1">Colonne Gauche</aside>
+        <main class="column col-main">Contenu Principal</main>
+        <aside class="column col-2">Colonne Droite</aside>
+    </div>
+
+    <!-- 3. Pied de page -->
+    <footer class="main-footer">
+        <p>© 2026 - Exercice Flexbox Réussi</p>
+    </footer>
+
+</body>
+</html>
+
